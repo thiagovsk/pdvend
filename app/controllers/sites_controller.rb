@@ -1,12 +1,12 @@
 class SitesController < ApplicationController
   def index
-    respond_with(@sites = Site.all, status: :ok)
+    respond_with(@sites = Site.all)
   end
 
   def create
     @site = Site.create(site_params)
     if @site.valid?
-      respond_with(@site, location: api_v1_sites_url)
+      respond_with(@site, location: sites_url)
     else
       respond_with(@site)
     end
