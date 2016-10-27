@@ -11,11 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027030347) do
+ActiveRecord::Schema.define(version: 20161027191026) do
 
-  create_table "tests", force: :cascade do |t|
+  create_table "sites", force: :cascade do |t|
+    t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "tags", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "site_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tags", ["site_id"], name: "index_tags_on_site_id"
 
 end
