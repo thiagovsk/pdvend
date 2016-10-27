@@ -1,0 +1,26 @@
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 110
+
+Metrics/MethodLength:
+  Max: 10
+
+HttpPositionalArguments:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'Gemfile.lock'
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'log/**/*'
+    - 'db/migrate/*_schema.rb'
+    - 'spec/dummy/**/*'
+    - 'config/initializers/**/*'
+
+Rails:
+  Enabled: true
