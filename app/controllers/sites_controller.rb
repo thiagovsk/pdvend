@@ -1,6 +1,10 @@
 class SitesController < ApplicationController
   def index
-    respond_with(@sites = Site.all)
+    @sites = {}
+    Site.all.each do |site|
+      @sites[site.url] = site.tags
+    end
+    respond_with(@sites)
   end
 
   def create
