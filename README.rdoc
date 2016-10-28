@@ -1,8 +1,13 @@
 - Para rodar a aplicação
   - $ git clone 
   - $ bundle install
+  - $ rake db:create && rake db:migrate
   - $ rails server
+
+- Para rodar os testes
+  - $ rake db:test:prepare
   - $ bundle exec rspec (para rodar os testes)
 
-- Aplicação no Heroku:
+- Travis ci: https://travis-ci.org/thiagovsk/pdvend
+- Aplicação no Heroku: https://gentle-lowlands-54919.herokuapp.com/
 
