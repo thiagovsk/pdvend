@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20161027191026) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "sites", force: :cascade do |t|
     t.string   "url"
     t.datetime "created_at", null: false
@@ -27,6 +30,7 @@ ActiveRecord::Schema.define(version: 20161027191026) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "tags", ["site_id"], name: "index_tags_on_site_id"
+  add_index "tags", ["site_id"], name: "index_tags_on_site_id", using: :btree
 
+  add_foreign_key "tags", "sites"
 end
