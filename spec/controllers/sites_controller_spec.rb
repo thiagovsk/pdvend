@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe SitesController, type: :controller do
   let(:site_params) { FactoryGirl.build(:site).attributes.as_json }
-  let(:invalid_site_params) { {url: "foo"} }
+  let(:invalid_site_params) { { url: 'foo' } }
   let!(:site) { FactoryGirl.create(:site) }
 
   describe 'GET #index /sites' do
@@ -35,15 +35,15 @@ RSpec.describe SitesController, type: :controller do
       end
     end
     context 'with invalid params' do
-       it 'returns http success' do
+      it 'returns http success' do
         post :create, format: :json, site: invalid_site_params
         expect(response).to have_http_status(:unprocessable_entity)
       end
-       it 'returns errors messages' do
-        post :create, format: :json, site: invalid_site_params
-        expect(response.body).to include("is invalid")
-      end
 
+      it 'returns errors messages' do
+        post :create, format: :json, site: invalid_site_params
+        expect(response.body).to include('is invalid')
+      end
     end
   end
 end

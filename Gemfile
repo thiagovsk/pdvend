@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
-#gem 'sqlite3'
 # Use postgresql
 gem 'pg'
 # Use SCSS for stylesheets
@@ -40,7 +38,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda', '~> 3.5'
   gem 'shoulda-matchers', '~> 2.0'
-  gem 'simplecov', :require => false
+  gem 'simplecov', require: false
 end
 
 group :development do
